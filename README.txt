@@ -11,3 +11,8 @@ git clone https://github.com/giammy/giammy.github.io
 git add --all
 git commit -m "Initial commit"
 git push -u origin master
+
+
+git rm README.txt~
+git commit -m "Removed backup README.txt"
+git push

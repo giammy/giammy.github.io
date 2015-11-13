@@ -10,7 +10,7 @@ for i in index hsk art riflessioni nsa cloudusb misc about bci ; do
     makeBase $i.html  
 done
 
-( pushd . ; cd .. ; rsync -av --delete giammy ~/Dropbox/Public/ ;  popd )
+( pushd . ; cd .. ; rsync -av --delete giammy.github.io/* ~/Dropbox/Public/giammy/ ;  popd )
 
 echo https://dl.dropboxusercontent.com/u/2092071/giammy/index.html
 
