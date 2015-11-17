@@ -14,5 +14,5 @@ git push -u origin master
 
 
 git rm README.txt~
-git commit -m "Removed backup README.txt"
+git commit -am "Removed backup README.txt"
 git push
