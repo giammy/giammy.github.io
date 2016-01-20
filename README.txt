@@ -1,4 +1,10 @@
+DNS: https://medium.com/@LovettLovett/github-pages-godaddy-f0318c2f25a#.kb923hadi
 
+ora:
+Server dei nomi
+NS8001.HOSTGATOR.COM
+NS8002.HOSTGATOR.COM 
+Aggiornamento di 14/11/2013 eseguito
 
 http://alexcican.com/post/guide-hosting-website-dropbox-github/
 https://pages.github.com/
