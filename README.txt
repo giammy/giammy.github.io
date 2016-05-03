@@ -6,6 +6,9 @@ NS8001.HOSTGATOR.COM
 NS8002.HOSTGATOR.COM 
 Aggiornamento di 14/11/2013 eseguito
 
+Godaddy -> Domini -> gestisci DNS -> standard 
+                  -> gestisci DNS -> solo inoltro -> http://giammy.com/cloudusb.html
+
 http://alexcican.com/post/guide-hosting-website-dropbox-github/
 https://pages.github.com/
 
