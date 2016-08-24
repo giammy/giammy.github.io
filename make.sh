@@ -3,7 +3,15 @@
 function makeBase {
     cat header.html.tmpl > $1
     cat $1.tmpl >> $1
-    cat footer.html.tmpl >> $1
+    cat footer1.html.tmpl >> $1
+    fn="footer-statcounter-"$1".tmpl"
+    echo $fn
+    if [ -f $fn ]; then
+        cat $fn >> $1
+    else
+        cat footer-statcounter-default.html.tmpl >> $1
+    fi
+    cat footer3.html.tmpl >> $1
 }
 
 for i in index hsk art riflessioni nsa cloudusb misc about bci gadgets energiaescienza ; do 
