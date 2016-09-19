@@ -14,7 +14,7 @@ function makeBase {
     cat footer3.html.tmpl >> $1
 }
 
-for i in index hsk art riflessioni nsa cloudusb misc about bci gadgets energiaescienza ; do 
+for i in index hsk art riflessioni nsa cloudusb misc about bci gadgets energiaescienza cars ; do 
     makeBase $i.html  
 done
 
