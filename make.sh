@@ -1,5 +1,10 @@
 #!/bin/bash
 
+#$git commit -am "..."
+#$ git push
+#Username for 'https://github.com': giammy
+#Password for 'https://giammy@github.com': e...6
+
 function makeBase {
     cat header.html.tmpl > $1
     cat $1.tmpl >> $1
