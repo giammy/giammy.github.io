@@ -32,6 +32,17 @@ class SeaData {
 	return this.internalSintomiCorrenti;
     }
 
+    unique(arr) {
+	if (arr.length < 1) return arr;
+	var ret=[arr[0]];
+	var last=arr[0];
+	for (var i=1; i<arr.length; i++) {
+	    //console.log(arr[i]); console.log(last);
+	    if (arr[i] != last) { ret.push(arr[i]); last = arr[i]; }
+	}
+	return ret;
+    }
+
     updateCorrentiFromSintomi() {
 	var aus = [];
         var legamiCorrenti = [];
@@ -43,6 +54,12 @@ class SeaData {
 	}
 	var probIds = legamiCorrenti.map(x => x.p);
         var azioniIds = legamiCorrenti.map(x => x.a);
+
+	probIds.sort();
+	azioniIds.sort();
+
+	probIds = this.unique(probIds);
+	azioniIds = this.unique(azioniIds);
 
 	//console.log(legamiCorrenti);
 	//console.log(probIds);
