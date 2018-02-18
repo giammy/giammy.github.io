@@ -1,0 +1,24 @@
+data = `
+{
+  "versione": "201802181000",
+  "sintomi":  [
+  	       { "id": "0", "desc": "nessuno"}, 
+	       { "id": "1", "desc": "dolore al torace"},
+	       { "id": "2", "desc": "dolore allo sterno"}
+	      ],
+  "problemi": [ 
+               { "id": "0", "desc": "nessuno" },
+	       { "id": "1", "desc": "arresto cardiaco"},
+               { "id": "2", "desc": "edema polmonare"}
+              ],
+  "azioni":   [ 
+  	       { "id": "0", "desc": "nessuno" },
+	       { "id": "1", "desc": "ossigeno" },
+	       { "id": "2", "desc": "posizione semiseduta" }
+              ],
+  "legami":   [
+  	       {"s":"0", "p":"0", "a":"0"},
+       	       {"s":"1", "p":"1", "a":"1"}
+              ]
+}`;
+
