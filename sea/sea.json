@@ -3,22 +3,61 @@ data = `
   "versione": "201802181000",
   "sintomi":  [
   	       { "id": "0", "desc": "nessuno"}, 
-	       { "id": "1", "desc": "dolore al torace"},
-	       { "id": "2", "desc": "dolore allo sterno"}
+	       { "id": "1", "desc": "uso muscoli accessori per respirare" },
+	       { "id": "2", "desc": "eloquio limitato" },
+	       { "id": "3", "desc": "rumori respiratori (borbottio - fischi - sibili)" },
+	       { "id": "4", "desc": "frequenza respiratoria <8 o > 30" },
+	       { "id": "5", "desc": "cianosi" },
+	       { "id": "6", "desc": "ritmo respiratorio alterato" },
+	       { "id": "7", "desc": "dolore al torace"},
+	       { "id": "8", "desc": "dolore allo sterno"}
 	      ],
   "problemi": [ 
                { "id": "0", "desc": "nessuno" },
 	       { "id": "1", "desc": "arresto cardiaco"},
-               { "id": "2", "desc": "edema polmonare"}
+               { "id": "2", "desc": "edema polmonare"},
+	       { "id": "3", "desc": "insufficienza respiratoria" }
               ],
   "azioni":   [ 
   	       { "id": "0", "desc": "nessuno" },
-	       { "id": "1", "desc": "ossigeno" },
-	       { "id": "2", "desc": "posizione semiseduta" }
+	       { "id": "1", "desc": "ABC" },
+	       { "id": "2", "desc": "somministrare ossigeno" },
+	       { "id": "3", "desc": "non far camminare" },
+	       { "id": "4", "desc": "rassicurare" },
+	       { "id": "5", "desc": "posizione seduta/semiseduta" }
               ],
   "legami":   [
   	       {"s":"0", "p":"0", "a":"0"},
-       	       {"s":"1", "p":"1", "a":"1"}
+       	       {"s":"1", "p":"3", "a":"1"},
+       	       {"s":"2", "p":"3", "a":"1"},
+       	       {"s":"3", "p":"3", "a":"1"},
+       	       {"s":"4", "p":"3", "a":"1"},
+       	       {"s":"5", "p":"3", "a":"1"},
+       	       {"s":"6", "p":"3", "a":"1"},
+       	       {"s":"1", "p":"3", "a":"2"},
+       	       {"s":"2", "p":"3", "a":"2"},
+       	       {"s":"3", "p":"3", "a":"2"},
+       	       {"s":"4", "p":"3", "a":"2"},
+       	       {"s":"5", "p":"3", "a":"2"},
+       	       {"s":"6", "p":"3", "a":"2"},
+       	       {"s":"1", "p":"3", "a":"3"},
+       	       {"s":"2", "p":"3", "a":"3"},
+       	       {"s":"3", "p":"3", "a":"3"},
+       	       {"s":"4", "p":"3", "a":"3"},
+       	       {"s":"5", "p":"3", "a":"3"},
+       	       {"s":"6", "p":"3", "a":"3"},
+       	       {"s":"1", "p":"3", "a":"4"},
+       	       {"s":"2", "p":"3", "a":"4"},
+       	       {"s":"3", "p":"3", "a":"4"},
+       	       {"s":"4", "p":"3", "a":"4"},
+       	       {"s":"5", "p":"3", "a":"4"},
+       	       {"s":"6", "p":"3", "a":"4"},
+       	       {"s":"1", "p":"3", "a":"5"},
+       	       {"s":"2", "p":"3", "a":"5"},
+       	       {"s":"3", "p":"3", "a":"5"},
+       	       {"s":"4", "p":"3", "a":"5"},
+       	       {"s":"5", "p":"3", "a":"5"},
+       	       {"s":"6", "p":"3", "a":"5"}
               ]
 }`;
 

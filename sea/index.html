@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-
+        <!-- http://layout.jquery-dev.com/index.cfm -->
 	<title>Simple Layout Demo</title>
 
 	<script type="text/javascript" src="jquery.js"></script>
@@ -29,6 +29,7 @@
 
 		//,	west__fxSettings_open: { easing: "easeOutBounce", duration: 750 }
 		});
+	        //myLayout.sizePane("west", 50);
  	});
 
 	</script>
@@ -144,8 +145,8 @@ $(document).ready(function(){
     //console.log(seaData.sintomiCorrenti);
     $("#showListOfSintomi").html(convertToDescHTML(seaData.sintomiCorrenti));
     $("#inputSintomo").val("");
-    $("#showListOfProblemi").text(convertToDescHTML(seaData.problemiCorrenti));
-    $("#showListOfAzioni").text(convertToDescHTML(seaData.azioniCorrenti));
+    $("#showListOfProblemi").html(convertToDescHTML(seaData.problemiCorrenti));
+    $("#showListOfAzioni").html(convertToDescHTML(seaData.azioniCorrenti));
   };
 
 
@@ -247,10 +248,13 @@ Dai sintomi alle azioni
 -->
 
 <div class="ui-layout-east">
-<h3><b><center>Azioni</center></b></h3>
+
+  
+
+<h3><b><center>Sospetti</center></b></h3>
 
 
-<div id="showListOfAzioni"></div>
+<div id="showListOfProblemi"></div>
 
 
 	<!-- attach allowOverflow method to this specific element -->
@@ -283,12 +287,10 @@ Dai sintomi alle azioni
 	<p><a href="http://layout.jquery-dev.net/demos.html">Go to the Demos page</a></p>
 -->
 
-  
-
-<h3><b><center>Sospetti</center></b></h3>
+<h3><b><center>Azioni</center></b></h3>
 
 
-<div id="showListOfProblemi"></div>
+<div id="showListOfAzioni"></div>
 
 
 </div>
