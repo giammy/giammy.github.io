@@ -118,6 +118,20 @@ class SeaData {
 	return (desc.s.indexOf(i) > -1);
     }
 
+    doUnique(arr) {
+	var res = [];
+	if (arr.length < 1) {
+	    return arr;
+	}
+	res[0] = arr[0];
+	for (var i=1; i<arr.length; i++) {
+	    if (arr[i] != arr[i-1]) {
+		res.push(arr[i]);
+	    }
+	}
+	return res;
+    }
+
     updateProblemiAzioniCorrenti() {
 	this.internalProblemiCorrenti = [];
 	this.internalAzioniCorrenti = [];
@@ -133,8 +147,8 @@ class SeaData {
 	    }
 	}
 	for (var j=0; j<usep.length; j++) {
-	    this.internalProblemiCorrenti = jQuery.unique(this.internalProblemiCorrenti.concat(usep[j]['p']).sort());
-	    this.internalAzioniCorrenti = jQuery.unique(this.internalAzioniCorrenti.concat(usep[j]['a']).sort());
+	    this.internalProblemiCorrenti = this.doUnique(this.internalProblemiCorrenti.concat(usep[j]['p']).sort());
+	    this.internalAzioniCorrenti = this.doUnique(this.internalAzioniCorrenti.concat(usep[j]['a']).sort());
 	}
     }
 
