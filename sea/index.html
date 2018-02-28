@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <title>SEA</title>
-<!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">-->
+  <!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">-->
 
   <!-- JQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -40,8 +40,8 @@
   }
 
   .gutter {
-//    background-color: transparent;
-    background-color: red;
+    background-color: transparent;
+//    background-color: red;
 
     background-repeat: no-repeat;
     background-position: 50%;
@@ -50,11 +50,13 @@
   .gutter.gutter-horizontal {
     cursor: col-resize;
     background-image: url('img/vertical.png');
+    background-size: 50px 100px;
   }
 
   .gutter.gutter-vertical {
     cursor: row-resize;
     background-image: url('img/horizontal.png');
+    background-size: 50px 100px;
   }
 
   .split.split-horizontal, .gutter.gutter-horizontal {
@@ -140,9 +142,10 @@ updateUI();
 
 </body>
 <script src="js/split.min.js"></script>
+<!-- https://nathancahill.github.io/Split.js/ -->
 <script>
     Split(['#a', '#b', '#g'], {
-      gutterSize: 8,
+      gutterSize: 50,
       cursor: 'col-resize'
     })
 </script>
