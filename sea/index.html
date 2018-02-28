@@ -1,299 +1,149 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-        <!-- http://layout.jquery-dev.com/index.cfm -->
-	<title>Simple Layout Demo</title>
+  <title>SEA</title>
+<!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">-->
 
-	<script type="text/javascript" src="jquery.js"></script>
-	<script type="text/javascript" src="jquery.ui.all.js"></script>
-	<script type="text/javascript" src="jquery.layout.min.js"></script>
+  <!-- JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-
-        <link rel="stylesheet" href="awesomplete.css" />
-        <script src="awesomplete.js"></script>
-
-
-<!--	<script type="text/javascript" src="js/complex.js"></script> -->
-
-  <script type="text/javascript" src="sea.json"></script>
-  <script src="sea.js"></script>
-
-	<script type="text/javascript">
-
-	var myLayout; // a var is required because this page utilizes: myLayout.allowOverflow() method
-
-	$(document).ready(function () {
-		myLayout = $('body').layout({
-			// enable showOverflow on west-pane so popups will overlap north pane
-			west__showOverflowOnHover: true
-
-		//,	west__fxSettings_open: { easing: "easeOutBounce", duration: 750 }
-		});
-	        //myLayout.sizePane("west", 50);
- 	});
-
-	</script>
+  <!-- <link rel="stylesheet" href="css/scrollableList.css"> -->
+  <!-- <script src="js/scrollableList.js"></script> -->
+  <script src="js/sea.js"></script>
 
 
-	<style type="text/css">
-	/**
-	 *	Basic Layout Theme
-	 * 
-	 *	This theme uses the default layout class-names for all classes
-	 *	Add any 'custom class-names', from options: paneClass, resizerClass, togglerClass
-	 */
+  <style>
+  html, body {
+    height: 100%;
+  }
 
-	.ui-layout-pane { /* all 'panes' */ 
-		background: #FFF; 
-		border: 1px solid #BBB; 
-		padding: 10px; 
-		overflow: auto;
-	} 
+  body {
+    padding: 8px;
+//    background-color: #F6F6F6;
+    background-color: white;
+    box-sizing: border-box;
+  }
 
-	.ui-layout-resizer { /* all 'resizer-bars' */ 
-		background: #DDD; 
-	} 
+  .split {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 
-	.ui-layout-toggler { /* all 'toggler-buttons' */ 
-		background: #AAA; 
-	} 
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
 
+  .content {
+    border: 1px solid #C0C0C0;
+    box-shadow: inset 0 1px 2px #e4e4e4;
+    background-color: #fff;
+  }
 
-	</style>
+  .gutter {
+//    background-color: transparent;
+    background-color: red;
 
+    background-repeat: no-repeat;
+    background-position: 50%;
+  }
 
-	<style type="text/css">
-	/**
-	 *	ALL CSS below is only for cosmetic and demo purposes
-	 *	Nothing here affects the appearance of the layout
-	 */
+  .gutter.gutter-horizontal {
+    cursor: col-resize;
+    background-image: url('img/vertical.png');
+  }
 
-	body {
-		font-family: Arial, sans-serif;
-		font-size: 0.85em;
-	}
-	p {
-		margin: 1em 0;
-	}
+  .gutter.gutter-vertical {
+    cursor: row-resize;
+    background-image: url('img/horizontal.png');
+  }
 
-	/*
-	 *	Rules below are for simulated drop-down/pop-up lists
-	 */
-
-	ul {
-		/* rules common to BOTH inner and outer UL */
-		z-index:	100000;
-		margin:		1ex 0;
-		padding:	0;
-		list-style:	none;
-		cursor:		pointer;
-		border:		1px solid Black;
-		/* rules for outer UL only */
-		width:		15ex;
-		position:	relative;
-	}
-	ul li {
-		background-color: #EEE;
-		padding: 0.15em 1em 0.3em 5px;
-	}
-	ul ul {
-		display:	none;
-		position:	absolute;
-		width:		100%;
-		left:		-1px;
-		/* Pop-Up */
-		bottom:		0;
-		margin:		0;
-		margin-bottom: 1.55em;
-	}
-	.ui-layout-north ul ul {
-		/* Drop-Down */
-		bottom:		auto;
-		margin:		0;
-		margin-top:	1.45em;
-	}
-	ul ul li		{ padding: 3px 1em 3px 5px; }
-	ul ul li:hover	{ background-color: #FF9; }
-	ul li:hover ul	{ display:	block; background-color: #EEE; }
-
-	</style>
+  .split.split-horizontal, .gutter.gutter-horizontal {
+    height: 100%;
+    float: left;
+  }
+  </style>
 
 <script>
 
-seaData = new SeaData(data);
+var sea = new SeaData("");
 
-function convertToDescStr (what) { 
-    var aus = what.map(x => x.desc);
-    return aus.join(", ");
+function updateUI() {
+  //console.log("UpdateUI");
+  //console.log(sea.problemiCorrenti);
+  //console.log(sea.azioniCorrenti);
+  //console.log(sea.sintomiChecked);
+
+  var localStr = "";
+  for (var i=0; i<sea.sintomiAll.length; i++) {
+      colorStr = (sea.sintomiChecked[i])?'red':'green';
+      localStr += "<button style='height:50px; width:100%; background-color:"+colorStr+";' onclick='buttonSclick(" +i+")'  >" + sea.sintomiAll[i] + "</button><br>";
+  }
+  $("#sDiv").html(localStr);
+
+  localStr = "";
+  for (var i=0; i<sea.problemiCorrenti.length; i++) {
+      localStr += "<button style='height:50px; width:100%' disabled>" + sea.getProblemaMsg(sea.problemiCorrenti[i]) + "</button><br>";
+  }
+  $("#pDiv").html(localStr);
+
+  localStr = "";
+  for (var i=0; i<sea.azioniCorrenti.length; i++) {
+      localStr += "<button style='height:50px; width:100%' disabled>" + sea.getAzioneMsg(sea.azioniCorrenti[i]) + "</button><br>";
+  }
+  $("#aDiv").html(localStr);
+
 }
 
-function convertToDescHTML (what) { 
-    var aus = what.map(x => x.desc);
-    return aus.join("<br>");
+function buttonSclick(i) {
+  //console.log("Click Sintomo " + i);
+  sea.switchSintomo(i);
+  updateUI();
 }
-
-
-//console.log(seaData.data);
 
 $(document).ready(function(){
-  document.getElementById("inputSintomo").setAttribute("data-list", convertToDescStr(seaData.sintomi));
 
-  document.getElementById("inputSintomo").onchange = function () {
-    var v = $("#inputSintomo").val();
-    seaData.addSintomoCorrente(v);
-    //console.log(seaData.getSintomiCorrentiAsStr());
-    //console.log(seaData.sintomiCorrenti);
-    $("#showListOfSintomi").html(convertToDescHTML(seaData.sintomiCorrenti));
-    $("#inputSintomo").val("");
-    $("#showListOfProblemi").html(convertToDescHTML(seaData.problemiCorrenti));
-    $("#showListOfAzioni").html(convertToDescHTML(seaData.azioniCorrenti));
-  };
-
-
+updateUI();
 
 });
-
-
-
-//var comboplete = new Awesomplete('input.dropdown-input', {
-//    minChars: 0,
-//});
-//
-//Awesomplete.$('.dropdown-btn').addEventListener("click", function() {
-//    if (comboplete.ul.childNodes.length === 0) {
-//    comboplete.minChars = 0;
-//    comboplete.evaluate();
-//    }
-//    else if (comboplete.ul.hasAttribute('hidden')) {
-//    comboplete.open();
-//    }
-//    else {
-//    comboplete.close();
-//    }
-//});
 
 </script>
 
 </head>
 <body>
 
-<!-- manually attach allowOverflow method to pane -->
-<div class="ui-layout-north" onmouseover="myLayout.allowOverflow('north')" onmouseout="myLayout.resetOverflow(this)">
-Dai sintomi alle azioni
-<!--
-	This is the north pane, closable, slidable and resizable
-	<ul>
-		<li>
-			<ul>
-				<li>one</li>
-				<li>two</li>
-				<li>three</li>
-				<li>four</li>
-				<li>five</li>
-			</ul>
-			Drop-Down 
-		</li>
-	</ul>
--->
-</div>
+    <div id="a" class="split split-horizontal">
+      <div id="ccc" class="content">
+        <div data-role="page" id="page1">
+          <div id="sDiv">
+<!--            <canvas id="header"></canvas> -->
+<!--            <div id="listDiv"> -->
 
-<!-- allowOverflow auto-attached by option: west__showOverflowOnHover = true -->
-<div class="ui-layout-west">
+              <div></div>
 
-<h3><b><center>Sintomi</center></b></h3>
+<!--            </div>-->
 
+          </div> 
+        </div>
+      </div>
+    </div>
 
+    <div id="b" class="split split-horizontal">
+      <div id="pDiv">
+      </div>
+    </div>
 
-<!-- VERSIONE 1 -->
-<!-- class="dropdown-input" -->
-<center>
-<input id="inputSintomo" class="awesomplete" data-list="" />
-<button>Aggiungi</button>
-</center>
+    <div id="g" class="split split-horizontal">
+      <div id="aDiv">
+      </div>
+    </div>
 
-
-
-
-
-<div id="showListOfSintomi"></div>
-
-<!--       data-list="Ada, Java, JavaScript, Brainfuck, LOLCODE, Node.js, Ruby on Rails" /> -->
-
-<!--
-	This is the west pane, closable, slidable and resizable
-	<ul>
-		<li>
-			<ul>
-				<li>one</li>
-				<li>two</li>
-				<li>three</li>
-				<li>four</li>
-				<li>five</li>
-			</ul>
-			Pop-Up 
-		</li>
-	</ul>
-
-	<p><button onclick="myLayout.close('west')">Close Me</button></p>
-
-	<p><a href="#" onClick="showOptions(myLayout,'defaults.fxSettings_open');showOptions(myLayout,'west.fxSettings_close')">Show Options.Defaults</a></p>
--->
-</div>
-
-<!--
-<div class="ui-layout-south">
-	This is the south pane, closable, slidable and resizable &nbsp;
-	<button onclick="myLayout.toggle('north')">Toggle North Pane</button>
-</div>
--->
-
-<div class="ui-layout-east">
-
-  
-
-<h3><b><center>Sospetti</center></b></h3>
-
-
-<div id="showListOfProblemi"></div>
-
-
-	<!-- attach allowOverflow method to this specific element -->
-<!--
-	This is the east pane, closable, slidable and resizable
-	<ul onmouseover="myLayout.allowOverflow(this)" onmouseout="myLayout.resetOverflow('east')">
-		<li>
-			<ul>
-				<li>one</li>
-				<li>two</li>
-				<li>three</li>
-				<li>four</li>
-				<li>five</li>
-			</ul>
-			Pop-Up 
-		</li>
-	</ul>
-
-	<p><button onclick="myLayout.close('east')">Close Me</button></p>
--->
-</div>
-
-<div class="ui-layout-center">
-<!--
-	This center pane auto-sizes to fit the space <i>between</i> the 'border-panes'
-	<p>This layout was created with only <b>default options</b> - no customization</p>
-	<p>Only the <b>applyDefaultStyles</b> option was enabled for <i>basic</i> formatting</p>
-	<p>The Pop-Up and Drop-Down lists demonstrate the <b>allowOverflow()</b> utility</p>
-	<p>The Close and Toggle buttons are examples of <b>custom buttons</b></p>
-	<p><a href="http://layout.jquery-dev.net/demos.html">Go to the Demos page</a></p>
--->
-
-<h3><b><center>Azioni</center></b></h3>
-
-
-<div id="showListOfAzioni"></div>
-
-
-</div>
 
 </body>
+<script src="js/split.min.js"></script>
+<script>
+    Split(['#a', '#b', '#g'], {
+      gutterSize: 8,
+      cursor: 'col-resize'
+    })
+</script>
 </html>
