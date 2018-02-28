@@ -32,11 +32,12 @@
 
   <!-- core app -->
   <link rel="stylesheet" href="css/seaSplit.css">
+  <script type="text/javascript" src="sea.json"></script>
   <script src="js/sea.js"></script>
 
 <script>
 
-var sea = new SeaData("");
+var sea = new SeaData(data);
 
 function updateUI() {
   //console.log("UpdateUI");
