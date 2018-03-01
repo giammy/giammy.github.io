@@ -48,7 +48,7 @@ function updateUI() {
   var localStr = "";
   for (var i=0; i<sea.sintomiAll.length; i++) {
       colorStr = (sea.sintomiChecked[i])?'red':'green';
-      localStr += "<button style='height:50px; width:100%; background-color:"+colorStr+";' onclick='buttonSclick(" +i+")'  >" + sea.sintomiAll[i] + "</button><br>";
+      localStr += "<button style='font-size: 14px; height:50px; width:100%; background-color:"+colorStr+";' onclick='buttonSclick(" +i+")'  >" + sea.sintomiAll[i] + "</button><br>";
   }
   $("#sDiv").html(localStr);
 
@@ -60,7 +60,7 @@ function updateUI() {
 
   localStr = "";
   for (var i=0; i<sea.azioniCorrenti.length; i++) {
-      localStr += "<button style='height:50px; width:100%' disabled>" + sea.getAzioneMsg(sea.azioniCorrenti[i]) + "</button><br>";
+      localStr += "<button style='font-size: 14px; height:50px; width:100%' disabled>" + sea.getAzioneMsg(sea.azioniCorrenti[i]) + "</button><br>";
   }
   $("#aDiv").html(localStr);
 
@@ -75,6 +75,7 @@ $(document).ready(function(){
 
   Split(['#a', '#b', '#g'], {
     gutterSize: 50,
+    sizes: [40, 20, 40],
     cursor: 'col-resize'
   });
 
@@ -85,6 +86,8 @@ $(document).ready(function(){
 
 </head>
 <body>
+
+    <center><b>SeA - Sintomi e Azioni, by <a href="http://giammy.com/sea/">Giammy</a> - selezionare i sintomi</b></center>
 
     <div id="a" class="split split-horizontal">
       <div id="sDiv">
