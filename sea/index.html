@@ -37,7 +37,36 @@
 
 <script>
 
-var sea = new SeaData(data);
+function checkOnlineDataUpdateTODO(currentData) {
+
+  var url = "http://giammy.com/sea/sea.json";
+
+  //include the   'async':false   parameter or the object data won't get captured when loading
+  var json = $.getJSON({'url': url, 'async': false, 'success': function(data) {
+      console.log("Callback NOT USED"); console.log(data.responseText);
+    }});
+  //console.log("Primo "); console.log(json.responseText);
+
+  var str = json.responseText;
+  str = str.substring(str.indexOf("`") + 1);
+  str = str.substring(0, str.indexOf("`"));
+  //console.log(str);
+  localStorage.setItem('localSeaData', data);
+}
+
+function checkDataUpdate(data) {
+    var localSeaData = localStorage.getItem('localSeaData');
+    //console.log(data);
+    if (localSeaData == null) {
+        localStorage.setItem('localSeaData', data);
+    } else if (localSeaData.version > data.version) {
+            data = localSeaData;
+    }
+    //checkOnlineDataUpdate(data);
+    return data;
+}
+
+var sea = new SeaData(checkDataUpdate(data));
 
 function updateUI() {
   //console.log("UpdateUI");
