@@ -1,0 +1,228 @@
+{
+  version: "20190409152332",
+  lists: [
+    {
+      name: "Zaino",
+
+                items: [{
+                        pos: "0",
+                        text: "T. Est. Sopra",
+                        src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+                    },
+                    {
+                        pos: "1",
+                        text: "T. Est. Sotto",
+                        src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png"
+                    },
+                    {
+                        pos: "2",
+                        text: "Gialla",
+                        src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png"
+                    },
+                    {
+                        pos: "3",
+                        text: "Rossa",
+                        src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
+                    },
+                    {
+                        pos: "4",
+                        text: "Verde",
+                        src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png"
+                    },
+                    {
+                        pos: "5",
+                        text: "Blu",
+                        src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png"
+                    },
+                    {
+                        pos: "6",
+                        text: "Verde chiaro (sotto)",
+                        src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"
+                    },
+                    {
+                        pos: "7",
+                        text: "Blu2 (sotto)",
+                        src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png"
+                    },
+                    {
+                        pos: "8",
+                        text: "Rossa2 (sotto)",
+                        src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png"
+                    },
+                    {
+                        pos: "9",
+                        text: "T. Trasparente",
+                        src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png"
+                    }
+                ],
+                quest: [{
+                        text: "Saturimetro e sonda adulto",
+                        repl: "0"
+                    },
+                    {
+                        text: "Sfigmomanomentro adulto",
+                        repl: "0"
+                    },
+                    {
+                        text: "Fonendoscopio",
+                        repl: "0"
+                    },
+
+                    {
+                        text: "Termometro per temperatura",
+                        repl: "1"
+                    },
+                    {
+                        text: "Rilevatore CO",
+                        repl: "1"
+                    },
+                    {
+                        text: "Sacchetti multiuso",
+                        repl: "1"
+                    },
+                    {
+                        text: "Maschera ossigeno adulti",
+                        repl: "1"
+                    },
+                    {
+                        text: "Occhialini ossigeno",
+                        repl: "1"
+                    },
+
+                    {
+                        text: "Ambu con raccordo",
+                        repl: "2"
+                    },
+
+                    {
+                        text: "Cannule di Guedel",
+                        repl: "3"
+                    },
+                    {
+                        text: "Catetere di Mount",
+                        repl: "3"
+                    },
+                    {
+                        text: "Filtro ambu",
+                        repl: "3"
+                    },
+                    {
+                        text: "Maschera ambu",
+                        repl: "3"
+                    },
+
+                    {
+                        text: "Tiralingua",
+                        repl: "3"
+                    },
+                    {
+                        text: "Apribocca",
+                        repl: "3"
+                    },
+                    {
+                        text: "Garze",
+                        repl: "4"
+                    },
+                    {
+                        text: "Bende orlate 10",
+                        repl: "4"
+                    },
+                    {
+                        text: "Bende orlate 5",
+                        repl: "4"
+                    },
+                    {
+                        text: "Cerotto telato 5",
+                        repl: "4"
+                    },
+                    {
+                        text: "Cerotto telato 2.5",
+                        repl: "4"
+                    },
+                    {
+                        text: "Forbice bottonuta",
+                        repl: "4"
+                    },
+
+                    {
+                        text: "Soluzione fisiologica 250",
+                        repl: "5"
+                    },
+
+                    {
+                        text: "Soluzione fisiologica 100",
+                        repl: "5"
+                    },
+
+                    {
+                        text: "Glucosata 250",
+                        repl: "5"
+                    },
+
+                    {
+                        text: "Elettrolitica 500",
+                        repl: "5"
+                    },
+
+                    {
+                        text: "Alibox",
+                        repl: "5"
+                    },
+
+                    {
+                        text: "Ago cannula",
+                        repl: "6"
+                    },
+                    {
+                        text: "Ago aspirazione",
+                        repl: "6"
+                    },
+                    {
+                        text: "Laccio",
+                        repl: "6"
+                    },
+                    {
+                        text: "Siringa",
+                        repl: "6"
+                    },
+                    {
+                        text: "Set infusione",
+                        repl: "6"
+                    },
+
+                    {
+                        text: "Occhiali protettivi",
+                        repl: "7"
+                    },
+                    {
+                        text: "Maschere protettive",
+                        repl: "7"
+                    },
+
+                    {
+                        text: "Ghiaccio in busta",
+                        repl: "8"
+                    },
+                    {
+                        text: "Copertina isotermica",
+                        repl: "8"
+                    },
+                    {
+                        text: "Disinfettante cutaneo",
+                        repl: "8"
+                    },
+                    {
+                        text: "Acqua ossigenata",
+                        repl: "8"
+                    },
+
+                    {
+                        text: "Sondino per aspirazione",
+                        repl: "9"
+                    }
+                ]
+
+
+    }
+  ]
+}
