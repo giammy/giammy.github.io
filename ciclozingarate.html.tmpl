@@ -27,6 +27,7 @@
 	           results.data.forEach(function (x) {
 		       if (x.length==5) {
                            if (x[4].length > 0) { x[4] = "<a href='" + x[4] + "'>Vai al link</a>"; }
+                           x.shift(); // remove first element
 			   bicitable.fnAddData(x)
 		       }
 		   });
@@ -49,12 +50,9 @@
                     </h2>
                     <hr>
 
-		      <div class="bicitable"></div>
-
 		    <table id="databicitable">
 		      <thead>
 			<tr>
-			  <td>N</td>
 			  <td>Luogo</td>
 			  <td>Tipo</td>			  
 			  <td>Note</td>
