@@ -125,7 +125,7 @@
                complete: function(results) {
 		   console.log(results);
 		   		   console.log(bicitable);
-	           results.data.forEach(x => console.log(x); bicitable.fnAddData(x));
+	           results.data.forEach(function (x) { console.log(x); bicitable.fnAddData(x) });
                }
            });
 	
