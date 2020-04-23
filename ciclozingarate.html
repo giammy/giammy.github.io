@@ -115,7 +115,7 @@ var tabulate = function (data,columns) {
 	  .append('th')
 	    .text(function (d) { return d })
 
-    console.log(data)
+    //console.log(data)
 
          var rows = tbody.selectAll('tr')
 	    .data(data)
@@ -123,13 +123,14 @@ var tabulate = function (data,columns) {
 	  .append('tr')
 
 	var cells = rows.selectAll('td')
-	    .data(function(row) {
-	    	return columns.map(function (column) {
-	    		return { column: column, value: row[column] }
-	      })
-      })
-      .enter()
-    .append('td')
+//	    .data(function(row) {
+//	    	return columns.map(function (column) {
+//	    		return { column: column, value: row[column] }
+//	      })
+//	    })
+            .data(function(d) { return d; })
+	    .enter()
+      .append('td')
       .text(function (d) { return d.value })
 
   return table;
