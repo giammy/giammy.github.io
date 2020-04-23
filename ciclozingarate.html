@@ -105,8 +105,23 @@
 	
         <script type="text/javascript"charset="utf-8">
 
+    // initialization and configuration   
+    $(document).ready( function () {
+           $('#databicitable').dataTable( {
+              "fixedHeader": true,
+              "lengthMenu": [ 1000, 100, 75, 50, 25, 10 ]
+              //"info":     false, // remove header and footer
+              //"ordering": false,
+	      //"bPaginate": false,
+	      //"sDom": 'T<"clear">lfrtip'
+	} ); // end dataTable                                                                               
+
+    } ); // end ready function
+    // END initialization and configuration                                                                 
+	  
 Papa.parse("ciclozingarate/bici.csv", {
-	complete: function(results) {
+    download: true,
+    complete: function(results) {
 		console.log(results);
 	}
 });
@@ -125,6 +140,20 @@ Papa.parse("ciclozingarate/bici.csv", {
 
 		      <div class="bicitable"></div>
 
+		    <table id="databicitable">
+		      <thead>
+			<tr>
+			  <td>N</td>
+			  <td>Luogo</td>
+			  <td>Tipo</td>			  
+			  <td>Note</td>
+			  <td>URL</td>
+			</tr>
+		      </thead>
+		      <tbody></tbody>
+		    </table>
+
+		      
 		    <hr>
                 </div>
             </div>
