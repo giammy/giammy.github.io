@@ -15,7 +15,12 @@
            var bicitable = $('#databicitable').dataTable( {
               "fixedHeader": true,
               "lengthMenu": [ 1000, 100, 75, 50, 25, 10 ]
-              //"info":     false, // remove header and footer
+              "columns": [
+                 null,
+                 null,
+                 { "width": "100px" },
+                ]
+               //"info":     false, // remove header and footer
               //"ordering": false,
 	      //"bPaginate": false,
 	      //"sDom": 'T<"clear">lfrtip'
