@@ -29,7 +29,7 @@ var tabulate = function (data,columns) {
 //	    		return { column: column, value: row[column] }
 //	      })
 //	    })
-            .data(function(d) { return d; })
+            .data(function(d) { console.log(d); return d; })
 	    .enter()
       .append('td')
       .text(function (d) { return d.value })
