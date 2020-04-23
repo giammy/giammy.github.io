@@ -24,7 +24,12 @@
                //header: true,
                download: true,
                complete: function(results) {
-	           results.data.forEach(function (x) { if (x.length==5) { bicitable.fnAddData(x) } });
+	           results.data.forEach(function (x) {
+		       if (x.length==5) {
+                           if (x[4].length > 0) { x[4] = "<a href='" + x[4] + "'>Vai al link</a>"; }
+			   bicitable.fnAddData(x)
+		       }
+		   });
                }
            });
 	
