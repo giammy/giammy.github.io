@@ -123,12 +123,10 @@
             d3.text("ciclozingarate/bici.csv", function(data) {
                 var parsedCSV = d3.csv.parseRows(data);
 
-                var container1 = d3.select(".bicitable")
+                var container = d3.select(".bicitable")
                     .append("table")
-		      .attr("id", "databicitable");
+		        .attr("id", "databicitable")
 
-
-		var container = container1.
                     .append("tbody")
 		
                     .selectAll("tr")
