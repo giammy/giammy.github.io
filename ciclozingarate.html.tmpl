@@ -24,9 +24,7 @@
                //header: true,
                download: true,
                complete: function(results) {
-		   console.log(results);
-		   		   console.log(bicitable);
-	           results.data.forEach(function (x) { console.log(x); bicitable.fnAddData(x) });
+	           results.data.forEach(function (x) { if (x.length==5) { bicitable.fnAddData(x) } });
                }
            });
 	
