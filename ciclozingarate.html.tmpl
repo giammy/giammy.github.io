@@ -33,7 +33,7 @@ var tabulate = function (data,columns) {
             .data(function(d) { console.log(d); return d; })
 	    .enter()
       .append('td')
-      .text(function (d) { return d.value })
+      .text(function (d) { return d })
 
   return table;
 }
