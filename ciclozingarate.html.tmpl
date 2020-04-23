@@ -25,6 +25,7 @@
                download: true,
                complete: function(results) {
 		   console.log(results);
+		   		   console.log(bicitable);
 	           results.data.forEach(x => bicitable.rows.add(x));
                }
            });
