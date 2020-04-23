@@ -10,8 +10,8 @@
 	
         <script type="text/javascript"charset="utf-8">
 
-    // initialization and configuration   
-    $(document).ready( function () {
+        // initialization and configuration   
+        $(document).ready( function () {
            var bicitable = $('#databicitable').dataTable( {
               "fixedHeader": true,
               "lengthMenu": [ 1000, 100, 75, 50, 25, 10 ]
@@ -19,19 +19,19 @@
               //"ordering": false,
 	      //"bPaginate": false,
 	      //"sDom": 'T<"clear">lfrtip'
-	} ); // end dataTable                                                                               
-
+	   } ); // end dataTable                                                                               
+           Papa.parse("ciclozingarate/bici.csv", {
+               header: true,
+               download: true,
+               complete: function(results) {
+		   console.log(results);
+	           results.data.forEach(x => bicitable.row.add(x));
+               }
+           });
+	
     } ); // end ready function
     // END initialization and configuration                                                                 
 	  
-Papa.parse("ciclozingarate/bici.csv", {
-    header: true,
-    download: true,
-    complete: function(results) {
-		console.log(results);
-	results.data.forEach(x => bicitable.row.add(x));
-    }
-});
 
 	  
         </script>
