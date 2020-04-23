@@ -31,7 +31,7 @@
                complete: function(results) {
 	           results.data.forEach(function (x) {
 		       if (x.length==4) {
-                           if (x[3].length > 0) { x[3] = "<a href='" + x[3] + " target='_blank''>Link</a>"; }
+                           if (x[3].length > 0) { x[3] = "<a href='" + x[3] + "' target='_blank'>Link</a>"; }
                            x.shift(); // remove first element
 			   bicitable.fnAddData(x)
 		       }
