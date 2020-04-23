@@ -97,7 +97,11 @@
 
 
     <div class="container">
-    
+
+
+        <script type="text/javascript" src="Datatables/datatables.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="Datatables/datatables.min.css"/>
+
         <script src="http://d3js.org/d3.v3.min.js"></script>
         <!-- <script src="d3.min.js?v=3.2.8"></script> -->
 
@@ -107,7 +111,7 @@
 
     // initialization and configuration   
     $(document).ready( function () {
-           $('#databicitable').dataTable( {
+           var bicitable = $('#databicitable').dataTable( {
               "fixedHeader": true,
               "lengthMenu": [ 1000, 100, 75, 50, 25, 10 ]
               //"info":     false, // remove header and footer
@@ -120,10 +124,12 @@
     // END initialization and configuration                                                                 
 	  
 Papa.parse("ciclozingarate/bici.csv", {
+    header: true,
     download: true,
     complete: function(results) {
 		console.log(results);
-	}
+	results.data.foreach(x => bicitable.row.add(x));
+    }
 });
 
 	  
