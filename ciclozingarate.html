@@ -128,7 +128,7 @@ var tabulate = function (data,columns) {
 //	    		return { column: column, value: row[column] }
 //	      })
 //	    })
-            .data(function(d) { return d; })
+            .data(function(d) { return {column: 'Luogo', value: 'xx'}; })
 	    .enter()
       .append('td')
       .text(function (d) { return d.value })
@@ -137,7 +137,7 @@ var tabulate = function (data,columns) {
 }
 
 d3.csv('ciclozingarate/bici.csv',function (data) {
-    var columns = ['#','Luogo','Tipo','Note','URL']
+    var columns = ['N','Luogo','Tipo','Note','URL']
   tabulate(data,columns)
 })
 	  
