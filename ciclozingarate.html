@@ -124,10 +124,6 @@
                 var parsedCSV = d3.csv.parseRows(data);
 
                 var container = d3.select(".bicitable")
-                    .append("table")
-		        .attr("id", "databicitable")
-
-                    .append("tbody")
 		
                     .selectAll("tr")
                         .data(parsedCSV).enter()
@@ -149,8 +145,18 @@
                     </h2>
                     <hr>
 
-		    <div class="bicitable">
-                    </div>
+		    <table id="databicitable" class="bicitable">
+		      <thead>
+			<tr>
+			  <td>#</td>
+			  <td>Luogo</td>
+			  <td>Tipo</td>			  
+			  <td>Note</td>
+			  <td>URL</td>
+			</tr>
+		      </thead>
+		      <tbody class="bicitable"></tbody>
+		    </table>
 		    
 
 		    <hr>
