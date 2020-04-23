@@ -23,6 +23,9 @@ for i in index hsk art riflessioni nsa psn cloudusb misc about bci gadgets energ
     makeBase $i.html  
 done
 
+git commit -am "..." 
+git push
+
 #
 #( pushd . ; cd .. ; rsync -av --delete giammy.github.io/* ~/Dropbox/Public/giammy/ ;  popd )
 #
