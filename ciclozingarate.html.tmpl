@@ -1,13 +1,33 @@
 
+        <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('DataTables/datatables.min.js') }}"></script>
+        <link rel="stylesheet" type="text/css" href="{{ asset('DataTables/datatables.min.css') }}"/>
+    
         <script src="http://d3js.org/d3.v3.min.js"></script>
         <!-- <script src="d3.min.js?v=3.2.8"></script> -->
 
+  <script>
+    // initialization and configuration                                                                        
+    $(document).ready( function () {
+        $('#databicitable').dataTable( {
+              "fixedHeader": true,
+              "lengthMenu": [ 1000, 100, 75, 50, 25, 10 ]
+              //"info":     false, // remove header and footer                                                 
+              //"ordering": false,                                                                             
+	      //"bPaginate": false,                                                                            
+	      //"sDom": 'T<"clear">lfrtip'
+	} ); // end dataTable                                                                                  
+    } ); // end ready function                                                                                 
+    // END initialization and configuration                                                                    
+  </script>
+	
         <script type="text/javascript"charset="utf-8">
             d3.text("ciclozingarate/bici.csv", function(data) {
-                var parsedCSV = d3.csv.parseRows(data).shift();
+                var parsedCSV = d3.csv.parseRows(data);
 
                 var container = d3.select(".bicitable")
                     .append("table")
+		        .attr("id", "databicitable")
 
                     .selectAll("tr")
                         .data(parsedCSV).enter()
