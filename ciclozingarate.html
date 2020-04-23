@@ -137,9 +137,10 @@ var tabulate = function (data,columns) {
   return table;
 }
 
-d3.csv.parseRows('ciclozingarate/bici.csv',function (data) {
+	  
+d3.text('ciclozingarate/bici.csv',function (data) {
     var columns = ['N','Luogo','Tipo','Note','URL']
-  tabulate(data,columns)
+    tabulate(d3.csv.parseRows(data),columns)
 })
 	  
         </script>
