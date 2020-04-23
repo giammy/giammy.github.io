@@ -124,8 +124,8 @@
                download: true,
                complete: function(results) {
 	           results.data.forEach(function (x) {
-		       if (x.length==5) {
-                           if (x[4].length > 0) { x[4] = "<a href='" + x[4] + "'>Vai al link</a>"; }
+		       if (x.length==4) {
+                           if (x[3].length > 0) { x[3] = "<a href='" + x[3] + "'>Link</a>"; }
                            x.shift(); // remove first element
 			   bicitable.fnAddData(x)
 		       }
@@ -153,7 +153,6 @@
 		      <thead>
 			<tr>
 			  <td>Luogo</td>
-			  <td>Tipo</td>			  
 			  <td>Note</td>
 			  <td>URL</td>
 			</tr>
