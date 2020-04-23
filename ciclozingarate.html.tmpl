@@ -7,16 +7,9 @@
 
   <script>
     // initialization and configuration                                                                        
-    $(document).ready( function () {
-        $('#databicitable').dataTable( {
-              "fixedHeader": true,
-              "lengthMenu": [ 1000, 100, 75, 50, 25, 10 ]
-              //"info":     false, // remove header and footer                                                 
-              //"ordering": false,                                                                             
-	      //"bPaginate": false,                                                                            
-	      //"sDom": 'T<"clear">lfrtip'
-	} ); // end dataTable                                                                                  
-    } ); // end ready function                                                                                 
+//    $(document).ready( function () {
+//   
+//    } ); // end ready function                                                                                 
     // END initialization and configuration                                                                    
   </script>
 	
@@ -34,7 +27,18 @@
                         .data(function(d) { return d; }).enter()
                         .append("td")
                         .text(function(d) { return d; });
-            });
+
+
+        $('#databicitable').dataTable( {
+              "fixedHeader": true,
+              "lengthMenu": [ 1000, 100, 75, 50, 25, 10 ]
+              //"info":     false, // remove header and footer
+              //"ordering": false,
+	      //"bPaginate": false,
+	      //"sDom": 'T<"clear">lfrtip'
+	} ); // end dataTable                                                                               
+
+	    });
         </script>
 
         <div class="row">
