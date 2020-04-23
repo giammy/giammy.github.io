@@ -4,7 +4,7 @@
 
         <script type="text/javascript"charset="utf-8">
             d3.text("ciclozingarate/bici.csv", function(data) {
-                var parsedCSV = d3.csv.parseRows(data);
+                var parsedCSV = d3.csv.parseRows(data).shift();
 
                 var container = d3.select(".bicitable")
                     .append("table")
