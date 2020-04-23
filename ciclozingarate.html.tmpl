@@ -14,13 +14,13 @@
         $(document).ready( function () {
            var bicitable = $('#databicitable').dataTable( {
               "fixedHeader": true,
-              "lengthMenu": [ 1000, 100, 75, 50, 25, 10 ]
+              "lengthMenu": [ 1000, 100, 75, 50, 25, 10 ],
               "columns": [
-                 null,
+                 { "width": "150px" },
                  null,
                  { "width": "100px" },
-                ]
-               //"info":     false, // remove header and footer
+              ]
+              //"info":     false, // remove header and footer
               //"ordering": false,
 	      //"bPaginate": false,
 	      //"sDom": 'T<"clear">lfrtip'
