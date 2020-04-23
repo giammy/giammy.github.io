@@ -128,7 +128,7 @@ Papa.parse("ciclozingarate/bici.csv", {
     download: true,
     complete: function(results) {
 		console.log(results);
-	results.data.foreach(x => bicitable.row.add(x));
+	results.data.forEach(x => bicitable.row.add(x));
     }
 });
 
