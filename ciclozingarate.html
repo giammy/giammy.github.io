@@ -134,6 +134,14 @@
 		       if (x.length==5) {
 
 			   if (x[4].length > 0) {
+			       switch (x[1]) {
+			       case "INFO":
+				   x[1] = "<img src='img/info.svg' alt='info' height='16' width='16'>";
+				   break;
+			       case "INFO":
+				   x[1] = "<img src='img/lettera.svg' alt='info' height='16' width='16'>";
+				   break;
+			       }
 			       x[4] = "<a href='" + x[4] +
 				   "' target='_blank'><img src='img/WWW_logo_by_Robert_Cailliau.svg' alt='Link' height='32' width='32'></a>";
 			   }
