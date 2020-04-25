@@ -133,7 +133,7 @@
 		   results.data.forEach(function (x) {
 		       if (x.length==5) {
 
-			   removed = x.splice(2,1);
+			   //removed = x.splice(2,1);
 			   switch (x[1]) {
 			   case "INFO":
 			       x[1] = "<div style='display: none'>INFO</div><img src='img/info.svg' alt='info' height='24' width='24'>";
@@ -144,10 +144,10 @@
 			   default:
 			       x[1] = "<div style='display: none'>ZZZ</div>";
 			   }
-			   x[2] = removed[0] + "::" + x[2];
+			   //x[2] = removed[0] + "::" + x[2];
 			   
-			   if (x[3].length > 0) {
-			       x[3] = "<a href='" + x[3] +
+			   if (x[4].length > 0) {
+			       x[4] = "<a href='" + x[4] +
 				   "' target='_blank'><img src='img/WWW_logo_by_Robert_Cailliau.svg' alt='Link' height='32' width='32'></a>";
 			   }
                            x.shift(); // remove first element
@@ -179,6 +179,7 @@
 		      <thead>
 			<tr>
 			  <td>T</td>
+			  <td>Luogo</td>
 			  <td>Note</td>
 			  <td>W</td>
 			</tr>
