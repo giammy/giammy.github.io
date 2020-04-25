@@ -111,13 +111,14 @@
         // initialization and configuration   
         $(document).ready( function () {
            var bicitable = $('#databicitable').dataTable( {
-              "fixedHeader": true,
-              "lengthMenu": [ 1000, 100, 75, 50, 25, 10 ],
-              "columns": [
-                 { "width": "100px" },
-                 null,
-                  { "width": "32px", "orderable": "false" },
-              ]
+               "fixedHeader": true,
+	       "bPaginate": false,
+               "lengthMenu": [ 1000, 100, 75, 50, 25, 10 ],
+               "columns": [
+                   { "width": "100px" },
+                   null,
+                   { "width": "32px", "orderable": false },
+               ]
               //"info":     false, // remove header and footer
               //"ordering": false,
 	      //"bPaginate": false,
