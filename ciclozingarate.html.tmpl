@@ -30,7 +30,12 @@
                complete: function(results) {
 	           results.data.forEach(function (x) {
 		       if (x.length==4) {
-                           if (x[3].length > 0) { x[3] = "<a href='" + x[3] + "' target='_blank'>Link</a>"; }
+
+
+			   if (x[3].length > 0) {
+			       x[3] = "<a href='" + x[3] +
+				   "' target='_blank'><img src='img/WWW_logo_by_Robert_Cailliau.svg' alt='Link' height='32' width='32'></a>";
+			   }
                            x.shift(); // remove first element
 			   bicitable.fnAddData(x)
 		       } else {
@@ -61,14 +66,20 @@
 			<tr>
 			  <td>Luogo</td>
 			  <td>Note</td>
-			  <td>URL</td>
+			  <td>W</td>
 			</tr>
 		      </thead>
 		      <tbody></tbody>
 		    </table>
 
-		    <center>Another (old)
-		            <a href="https://ciclozingarate.altervista.org/">blog</a></center>
+		    <p><a href="https://it.wikipedia.org/wiki/Robert_Cailliau" target="_blank">
+		        <img src='img/WWW_logo_by_Robert_Cailliau.svg'
+			     alt='Original WWW logo by Robert Cailliau' height='32' width='32'></a>
+		      Original WWW logo by Robert Cailliau</p>
+
+		    <p><center>Another (old)
+		        <a href="https://ciclozingarate.altervista.org/">blog</a></center></p>
+		    
                 </div>
             </div>
         </div>
