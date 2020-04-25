@@ -130,21 +130,24 @@
                //header: true,
                download: true,
                complete: function(results) {
-	           results.data.forEach(function (x) {
+		   results.data.forEach(function (x) {
 		       if (x.length==5) {
 
-			   if (x[4].length > 0) {
-			       switch (x[1]) {
-			       case "INFO":
-				   x[1] = "<div style='display: none'>INFO</div><img src='img/info.svg' alt='info' height='24' width='24'>";
-				   break;
-			       case "AGENZIA":
-				   x[1] = "<div style='display: none'>AGENZIA</div><img src='img/agenzia.svg' alt='agenzia' height='24' width='24'>";
-				   break;
-			       default:
-				   x[1] = "<div style='display: none'>ZZZ</div>";
-			       }
-			       x[4] = "<a href='" + x[4] +
+			   removed = x.splice(2,1);
+			   switch (x[1]) {
+			   case "INFO":
+			       x[1] = "<div style='display: none'>INFO</div><img src='img/info.svg' alt='info' height='24' width='24'>";
+			       break;
+			   case "AGENZIA":
+			       x[1] = "<div style='display: none'>AGENZIA</div><img src='img/agenzia.svg' alt='agenzia' height='24' width='24'>";
+			       break;
+			   default:
+			       x[1] = "<div style='display: none'>ZZZ</div>";
+			   }
+			   x[2] = removed[0] + "::" + x[2];
+			   
+			   if (x[3].length > 0) {
+			       x[3] = "<a href='" + x[3] +
 				   "' target='_blank'><img src='img/WWW_logo_by_Robert_Cailliau.svg' alt='Link' height='32' width='32'></a>";
 			   }
                            x.shift(); // remove first element
