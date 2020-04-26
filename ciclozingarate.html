@@ -121,15 +121,15 @@
 	      var retStr = "";
 	      switch (typ) {
 	      case "INFO":
-		  prefix = "INFO";
+		  prefix = "10INFO";
 		  retStr = image("img/info.svg");
 		  break;
 	      case "AGENZIA":
-		  prefix = "AGENZIA";
+		  prefix = "30AGENZIA";
 		  retStr = image("img/agenzia.svg");
 		  break;
 	      default:
-		  prefix = "ZZZ";
+		  prefix = "20ZZZ";
 		  retStr = image("img/WWW_logo_by_Robert_Cailliau.svg");
 	      }
 
@@ -166,7 +166,7 @@
 		       if (x.length==5) {
 			   var renderedContents = ["", ""];
 			   renderedContents[0] = renderDivImgUrl(x[1],x[4]);
-			   renderedContents[1] = x[3] + (x[2].length>0)?"<br><i>" + x[2] + "</i>":"";
+			   renderedContents[1] = x[3] + ((x[2].length>0)?"<br><i>" + x[2] + "</i>":"");
 			   bicitable.fnAddData(renderedContents);
 		       } else {
 			   console.log("Skipping ");
