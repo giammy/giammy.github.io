@@ -9,6 +9,14 @@
 	
         <script type="text/javascript"charset="utf-8">
 
+	  function hiddenDiv(str) {
+	      return "<div style='display: none'>" + str + "</div>";
+	  }
+
+	  function image(str) {
+	      return "<img src='" + str + "' alt='" + str + "' height='24' width='24'>"
+	  }
+	  
         // initialization and configuration   
         $(document).ready( function () {
            var bicitable = $('#databicitable').dataTable( {
@@ -36,13 +44,13 @@
 
 			   switch (x[1]) {
 			   case "INFO":
-			       x[1] = "<div style='display: none'>INFO</div><img src='img/info.svg' alt='info' height='24' width='24'>";
+			       x[1] = hiddenDiv("INFO") + image("img/info.svg");
 			       break;
 			   case "AGENZIA":
-			       x[1] = "<div style='display: none'>AGENZIA</div><img src='img/agenzia.svg' alt='agenzia' height='24' width='24'>";
+			       x[1] = hiddenDiv("AGENZIA") + image("img/agenzia.svg");
 			       break;
 			   default:
-			       x[1] = "<div style='display: none'>ZZZ</div>";
+			       x[1] = hiddenDiv("ZZZ");
 			   }
 
 			   x[3] = (x[2].length>0)?x[3] + "<br><i>" + x[2] + "</i>":x[3];
