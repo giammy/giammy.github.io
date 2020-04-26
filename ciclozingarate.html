@@ -115,6 +115,30 @@
 	  function image(str) {
 	      return "<img src='" + str + "' alt='" + str + "' height='24' width='24'>"
 	  }
+
+	  function renderDivImgUrl(typ, url) {
+	      var prefix = "";
+	      var retStr = "";
+	      switch (typ) {
+	      case "INFO":
+		  prefix = "INFO";
+		  retStr = image("img/info.svg");
+		  break;
+	      case "AGENZIA":
+		  prefix = "AGENZIA";
+		  retStr = image("img/agenzia.svg");
+		  break;
+	      default:
+		  prefix = "ZZZ";
+		  retStr = image("img/WWW_logo_by_Robert_Cailliau.svg");
+	      }
+
+	      if (url.length > 0) {
+		  retStr = "<a href='" + url + "' target='_blank'>" + retStr + "</a>";
+	      }
+	      
+	      return hiddenDiv(prefix) + retStr;
+	  }
 	  
         // initialization and configuration   
         $(document).ready( function () {
@@ -127,7 +151,7 @@
 		   { "width": "16px" },
                    //{ "width": "50px" },
                    null,
-                   { "width": "16px", "orderable": false },
+                   //{ "width": "16px", "orderable": false },
                ]
               //"info":     false, // remove header and footer
               //"ordering": false,
@@ -140,27 +164,10 @@
                complete: function(results) {
 		   results.data.forEach(function (x) {
 		       if (x.length==5) {
-
-			   switch (x[1]) {
-			   case "INFO":
-			       x[1] = hiddenDiv("INFO") + image("img/info.svg");
-			       break;
-			   case "AGENZIA":
-			       x[1] = hiddenDiv("AGENZIA") + image("img/agenzia.svg");
-			       break;
-			   default:
-			       x[1] = hiddenDiv("ZZZ");
-			   }
-
-			   x[3] = (x[2].length>0)?x[3] + "<br><i>" + x[2] + "</i>":x[3];
-			   
-			   if (x[4].length > 0) {
-			       x[4] = "<a href='" + x[4] +
-				   "' target='_blank'><img src='img/WWW_logo_by_Robert_Cailliau.svg' alt='Link' height='32' width='32'></a>";
-			   }
-                           x.shift(); // remove first element
-			   x.splice(1,1);
-			   bicitable.fnAddData(x)
+			   var renderedContents = ["", ""];
+			   renderedContents[0] = renderDivImgUrl(x[1],x[4]);
+			   renderedContents[1] = x[3] + (x[2].length>0)?"<br><i>" + x[2] + "</i>":"";
+			   bicitable.fnAddData(renderedContents);
 		       } else {
 			   console.log("Skipping ");
 			   console.log(x);
@@ -187,9 +194,8 @@
 		    <table id="databicitable" class="table table-striped table-bordered">
 		      <thead>
 			<tr>
-			  <td>T</td>
+			  <td>I</td>
 			  <td>Note</td>
-			  <td>W</td>
 			</tr>
 		      </thead>
 		      <tbody></tbody>
