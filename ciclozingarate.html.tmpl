@@ -21,11 +21,11 @@
 	      var prefix = "";
 	      var retStr = "";
 	      switch (typ) {
-	      case "INFO":
+	      case typ.match(/INFO/):
 		  prefix = "10INFO";
 		  retStr = image("img/info.svg");
 		  break;
-	      case "AGENZIA":
+	      case typ.match(/AGENZIA/):
 		  prefix = "30AGENZIA";
 		  retStr = image("img/agenzia.svg");
 		  break;
