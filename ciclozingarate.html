@@ -119,27 +119,25 @@
 	  }
 
 	  function renderDivImgUrl(typ, url) {
-	      var prefix = "";
-	      var retStr = "";
+	      var prefix = "20ZZZ";
+	      var retStr = image("img/WWW_logo_by_Robert_Cailliau.svg");
+
 	      switch (typ) {
-	      case typ.match(/INFO/):
+	      case String(typ.match(/INFO/)):
 		  prefix = "10INFO";
 		  retStr = image("img/info.svg");
-		  break;
-	      case typ.match(/AGENZIA/):
+		  // fall thru'
+	      case String(typ.match(/AGENZIA/)):
 		  prefix = "30AGENZIA";
 		  retStr = image("img/agenzia.svg");
-		  break;
-	      default:
-		  prefix = "20ZZZ";
-		  retStr = image("img/WWW_logo_by_Robert_Cailliau.svg");
+		  // fall thru'
 	      }
 
 	      if (url.length > 0) {
 		  retStr = "<a href='" + url + "' target='_blank'>" + retStr + "</a>";
 	      }
 	      
-	      return hiddenDiv(prefix) + retStr;
+	      return("<center>" + hiddenDiv(prefix) + retStr + "</center>");
 	  }
 	  
         // initialization and configuration   
