@@ -4,7 +4,7 @@ SRC=`basename $0`
 
 cd misc
 cpdf/OSX-Intel/cpdf -split  ../$SRC-ori.pdf -o out%%%.pdf
-cpdf/OSX-Intel/cpdf -add-text "v. G. Marconi"  -font "Helvetica" -font-size 6 out013.pdf -o out013.pdf -pos-center "220 320"
-cpdf/OSX-Intel/cpdf -merge out???.pdf -o ../$SRC.pdf
+cpdf/OSX-Intel/cpdf -add-text "v.G.Marconi"  -font "Helvetica" -font-size 6 out013.pdf -o out013.pdf -pos-center "220 322"
+cpdf/OSX-Intel/cpdf -squeeze -merge out???.pdf -o ../$SRC.pdf
 rm out???.pdf
 
