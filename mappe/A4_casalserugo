@@ -1,0 +1,11 @@
+#!/bin/bash
+
+SRC=`basename $0`
+
+cd misc
+cpdf/OSX-Intel/cpdf -split  ../$SRC-ori.pdf -o out%%%.pdf
+cpdf/OSX-Intel/cpdf -add-text "v.G.Marconi"  -font "Helvetica" -font-size 6 out005.pdf -o out005.pdf -pos-center "260 388"
+cpdf/OSX-Intel/cpdf -add-text "v.Gastaldello"  -font "Helvetica" -font-size 6 out005.pdf -o out005.pdf -pos-center "290 305"
+cpdf/OSX-Intel/cpdf -squeeze -merge out???.pdf -o ../$SRC.pdf
+rm out???.pdf
+

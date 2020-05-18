@@ -4,7 +4,21 @@ SRC=`basename $0`
 
 cd misc
 cpdf/OSX-Intel/cpdf -split  ../$SRC-ori.pdf -o out%%%.pdf
+
+# strade presenti nello stradario, manca il nome nella mappa
+cpdf/OSX-Intel/cpdf -add-text "v.S.Leopoldo"  -font "Helvetica" -font-size 6 out011.pdf -o out011.pdf -pos-center "535 682"
+cpdf/OSX-Intel/cpdf -add-text "P. Giovanni"  -font "Helvetica" -font-size 6 out012.pdf -o out012.pdf -pos-center "85 410"
+cpdf/OSX-Intel/cpdf -add-text "Paolo II"  -font "Helvetica" -font-size 6 out012.pdf -o out012.pdf -pos-center "85 400"
+cpdf/OSX-Intel/cpdf -add-text "Piazza"  -font "Helvetica" -font-size 6 out013.pdf -o out013.pdf -pos-center "250 270"
+cpdf/OSX-Intel/cpdf -add-text "Bertipaglia"  -font "Helvetica" -font-size 6 out013.pdf -o out013.pdf -pos-center "250 260"
 cpdf/OSX-Intel/cpdf -add-text "v.G.Marconi"  -font "Helvetica" -font-size 6 out013.pdf -o out013.pdf -pos-center "220 322"
+
+cpdf/OSX-Intel/cpdf -add-text "P.za del"  -font "Helvetica" -font-size 6 out012.pdf -o out012.pdf -pos-center "85 515"
+cpdf/OSX-Intel/cpdf -add-text "Volontariato"  -font "Helvetica" -font-size 6 out012.pdf -o out012.pdf -pos-center "85 505"
+
+cpdf/OSX-Intel/cpdf -add-text "P.za del"  -font "Helvetica" -font-size 6 out012.pdf -o out012.pdf -pos-center "112 527"
+cpdf/OSX-Intel/cpdf -add-text "Donatore"  -font "Helvetica" -font-size 6 out012.pdf -o out012.pdf -pos-center "112 517"
+
 cpdf/OSX-Intel/cpdf -squeeze -merge out???.pdf -o ../$SRC.pdf
 rm out???.pdf
 
