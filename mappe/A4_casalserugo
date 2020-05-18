@@ -6,6 +6,12 @@ cd misc
 cpdf/OSX-Intel/cpdf -split  ../$SRC-ori.pdf -o out%%%.pdf
 cpdf/OSX-Intel/cpdf -add-text "v.G.Marconi"  -font "Helvetica" -font-size 6 out005.pdf -o out005.pdf -pos-center "260 388"
 cpdf/OSX-Intel/cpdf -add-text "v.Gastaldello"  -font "Helvetica" -font-size 6 out005.pdf -o out005.pdf -pos-center "290 305"
+cpdf/OSX-Intel/cpdf -add-text "v.degli Alpini"  -font "Helvetica" -font-size 6 out009.pdf -o out009.pdf -pos-center "515 460"
+cpdf/OSX-Intel/cpdf -add-text "v.A.Vivaldi"  -font "Helvetica" -font-size 6 out013.pdf -o out013.pdf -pos-center "245 366"
+cpdf/OSX-Intel/cpdf -add-text "v.L.Basso"  -font "Helvetica" -font-size 6 out013.pdf -o out013.pdf -pos-center "250 392"
+cpdf/OSX-Intel/cpdf -add-text "v.don Milani"  -font "Helvetica" -font-size 6 out013.pdf -o out013.pdf -pos-center "270 540"
+cpdf/OSX-Intel/cpdf -add-text "v.Ruzzante"  -font "Helvetica" -font-size 6 out013.pdf -o out013.pdf -pos-center "290 534"
+cpdf/OSX-Intel/cpdf -add-text "v.don L.Sturzo"  -font "Helvetica" -font-size 6 out013.pdf -o out013.pdf -pos-center "305 528"
 cpdf/OSX-Intel/cpdf -squeeze -merge out???.pdf -o ../$SRC.pdf
 rm out???.pdf
 
