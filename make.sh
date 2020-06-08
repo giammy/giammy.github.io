@@ -23,6 +23,8 @@ for i in index hsk art riflessioni nsa psn cloudusb misc about bci gadgets energ
     makeBase $i.html  
 done
 
+cp art.html arte.html
+
 git commit -am "..." 
 git push
 
