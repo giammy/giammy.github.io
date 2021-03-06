@@ -119,12 +119,15 @@
 	  }
 
 	  function renderDivImgUrl(typ, url) {
-	      var prefix = "20ZZZ";
+	      var prefix = "21ZZZ";
 	      var retStr = image("img/WWW_logo_by_Robert_Cailliau.svg");
 
 	      if (typ.includes("INFO")) {
 		  prefix = "10INFO";
 		  retStr = image("img/info.svg");
+	      } else if (typ.includes("BIKE")) {
+		  prefix = "20BIKE";
+		  retStr = image("img/bike.svg");
 	      } else if (typ.includes("TREK")) {
 		  prefix = "30TREK";
 		  retStr = image("img/trek.svg");
@@ -206,12 +209,12 @@
 		    </table>
 
 		    <br>
-
+<!--
 		    <p><a href="https://it.wikipedia.org/wiki/Robert_Cailliau" target="_blank">
 		        <img src='img/WWW_logo_by_Robert_Cailliau.svg'
 			     alt='Original WWW logo by Robert Cailliau' height='32' width='32'></a>
 		      Original WWW logo by Robert Cailliau</p>
-
+-->
 		    <p>Another (old)
 		        <a href="https://ciclozingarate.altervista.org/">Ciclozingarate blog</a></p>
 		    
