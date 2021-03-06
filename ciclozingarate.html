@@ -127,8 +127,12 @@
 		  prefix = "10INFO";
 		  retStr = image("img/info.svg");
 		  break;
+	      case String(typ.match(/TREK/)):
+		  prefix = "30TREK";
+		  retStr = image("img/trek.svg");
+		  break;
 	      case String(typ.match(/AGENZIA/)):
-		  prefix = "30AGENZIA";
+		  prefix = "40AGENZIA";
 		  retStr = image("img/agenzia.svg");
 		  break;
 	      }
