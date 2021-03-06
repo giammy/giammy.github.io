@@ -163,7 +163,7 @@
                download: true,
                complete: function(results) {
 		   results.data.forEach(function (x) {
-		       if (x.length==5) {
+		       if (x.length==6) {
 			   var renderedContents = ["", ""];
 			   renderedContents[0] = renderDivImgUrl(x[1],x[4]);
 			   renderedContents[1] = x[3] + ((x[2].length>0)?"<br><i>" + x[2] + "</i>":"");
