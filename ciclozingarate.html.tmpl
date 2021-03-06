@@ -21,13 +21,13 @@
 	      var prefix = "20ZZZ";
 	      var retStr = image("img/WWW_logo_by_Robert_Cailliau.svg");
 
-	      if (typ.contains("INFO")) {
+	      if (typ.includes("INFO")) {
 		  prefix = "10INFO";
 		  retStr = image("img/info.svg");
-	      } else if (typ.contains("TREK")) {
+	      } else if (typ.includes("TREK")) {
 		  prefix = "30TREK";
 		  retStr = image("img/trek.svg");
-	      } else if (typ.contains("AGENZIA/")) {
+	      } else if (typ.includes("AGENZIA/")) {
 		  prefix = "40AGENZIA";
 		  retStr = image("img/agenzia.svg");
 	      }
