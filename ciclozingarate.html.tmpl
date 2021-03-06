@@ -26,7 +26,7 @@
 		  prefix = "10INFO";
 		  retStr = image("img/info.svg");
 		  break;
-	      case String(typ.match(/TREK/)):
+	      case String(typ.match('\\bTREK\\b')):
 		  console.log("XXXXXXXXX");
 		  prefix = "30TREK";
 		  retStr = image("img/trek.svg");
