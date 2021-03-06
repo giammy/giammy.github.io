@@ -125,13 +125,13 @@
 	      if (typ.contains("INFO")) {
 		  prefix = "10INFO";
 		  retStr = image("img/info.svg");
-	       else if (typ.contains("TREK")) {
+	      } else if (typ.contains("TREK")) {
 		  prefix = "30TREK";
 		  retStr = image("img/trek.svg");
-	       else if (typ.contains("AGENZIA/")) {
+	      } else if (typ.contains("AGENZIA/")) {
 		  prefix = "40AGENZIA";
 		  retStr = image("img/agenzia.svg");
-		      }
+	      }
 
 	      if (url.length > 0) {
 		  retStr = "<a href='" + url + "' target='_blank'>" + retStr + "</a>";
