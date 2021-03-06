@@ -27,6 +27,7 @@
 		  retStr = image("img/info.svg");
 		  break;
 	      case String(typ.match(/TREK/)):
+		  console.log("XXXXXXXXX");
 		  prefix = "30TREK";
 		  retStr = image("img/trek.svg");
 		  break;
@@ -71,7 +72,7 @@
 			   renderedContents[0] = renderDivImgUrl(x[1],x[4]);
 			   renderedContents[1] = x[3] + ((x[2].length>0)?"<br><i>" + x[2] + "</i>":"");
 			   if (x[1].includes("FATTO")) {
-   			   console.log(x);
+   			       // console.log(x);
 			       renderedContents[1] += "<div style='float: right'><img src='img/check.svg' alt='check' height='16' width='16'></div>"
 			   }
 			   bicitable.fnAddData(renderedContents);
