@@ -21,21 +21,16 @@
 	      var prefix = "20ZZZ";
 	      var retStr = image("img/WWW_logo_by_Robert_Cailliau.svg");
 
-	      switch (typ) {
-	      case String(typ.match(/INFO/)):
+	      if (typ.contains("INFO")) {
 		  prefix = "10INFO";
 		  retStr = image("img/info.svg");
-		  break;
-	      case String(typ.match('*TREK*')):
-		  console.log("XXXXXXXXX");
+	       else if (typ.contains("TREK")) {
 		  prefix = "30TREK";
 		  retStr = image("img/trek.svg");
-		  break;
-	      case String(typ.match(/AGENZIA/)):
+	       else if (typ.contains("AGENZIA/")) {
 		  prefix = "40AGENZIA";
 		  retStr = image("img/agenzia.svg");
-		  break;
-	      }
+		      }
 
 	      if (url.length > 0) {
 		  retStr = "<a href='" + url + "' target='_blank'>" + retStr + "</a>";
