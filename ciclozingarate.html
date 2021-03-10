@@ -284,7 +284,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   <div class="modal-content">
     <div class="modal-header">
       <span class="close">&times;</span>
-      <h2>Qualche nota</h2>
+      <h2>Note</h2>
     </div>
     <div id="modalcontent" class="modal-body">
     </div>
@@ -307,7 +307,7 @@ var modal = document.getElementById("myModal");
   var modalContent = document.getElementById("modalcontent");
 
   function modalActivated(string) {
-      modalContent.innerHTML = string;
+      modalContent.innerHTML = "<p>" + string + "</p>;
       modal.style.display = "block";
   }
 
