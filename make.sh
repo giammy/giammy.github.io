@@ -10,7 +10,7 @@ function makeBase {
     cat $1.tmpl >> $1
     cat footer1.html.tmpl >> $1
     fn="footer-statcounter-"$1".tmpl"
-    echo $fn
+    # echo $fn
     if [ -f $fn ]; then
         cat $fn >> $1
     else
