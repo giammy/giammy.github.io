@@ -17,6 +17,10 @@
 	      return "<img src='" + str + "' alt='" + str + "' height='24' width='24'>"
 	  }
 
+	  function addSlash(s) { 
+	      return s.replace(/[\\"']/g, '\\$&').replace(/\u0000/g, '\\0');
+	  } 
+	  
 	  function renderDivImgUrl(typ, url) {
 	      var prefix = "50ZZZ";
 	      var retStr = image("img/WWW_logo_by_Robert_Cailliau.svg");
@@ -67,6 +71,8 @@
 		   results.data.forEach(function (x) {
 		       if (x.length==7) {
 			   var renderedContents = ["", ""];
+			   x[3] = addSlash(x[3]);
+   			   x[5] = addSlash(x[5]);
 			   renderedContents[0] = renderDivImgUrl(x[1],x[4]);
 			   renderedContents[1] = x[3] + ((x[2].length>0)?"<br><i>" + x[2] + "</i>":"");
 
@@ -89,10 +95,8 @@
 			       renderedContents[1] += "<div style='float: right'><img src='img/check.svg' alt='check' height='16' width='16'></div>"
 			   }
 			   bicitable.fnAddData(renderedContents);
-		       } else {
-			   console.log("Skipping ");
-			   console.log(x);
 		       }
+		       // else { console.log("Skipping "); console.log(x); }
 		   });
                }
            });
