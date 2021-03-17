@@ -69,7 +69,7 @@
                download: true,
                complete: function(results) {
 		   results.data.forEach(function (x) {
-		       console.log(x.lenght);
+		       console.log(x);
 		       if (x.length==7) {
 			   var renderedContents = ["", ""];
 			   x[3] = addSlash(x[3]);
