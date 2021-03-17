@@ -18,7 +18,6 @@
 	  }
 
 	  function addSlash(s) { 
-	      console.log(s);
 	      return s.replace(/[\\"']/g, '\\$&').replace(/\u0000/g, '\\0');
 	  } 
 	  
@@ -70,6 +69,7 @@
                download: true,
                complete: function(results) {
 		   results.data.forEach(function (x) {
+		           if (typeof x == 'undefined') return;
 		           var renderedContents = ["", ""];
 			   x['luogo'] = addSlash(x['luogo']);
    			   x['nota'] = addSlash(x['nota']);
