@@ -68,7 +68,7 @@
                header: true,
                download: true,
                complete: function(results) {
-		   results.data.forEach(function (x) {
+		   results.data.forEach(function (x) { console.log(x);
 		           if (typeof(x) == "undefined") return;
 		           var renderedContents = ["", ""];
 			   x['luogo'] = addSlash(x['luogo']);
