@@ -248,12 +248,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
            Papa.parse("ciclozingarate/bici.csv", {
                header: true,
                download: true,
-	       worker: true,
-	       complete: function() {
-		    console.log("All done!");
-	       },
-               step: function(x) {
-		   //results.data.forEach(function (x) { 
+               complete: function(results) {
+		   results.data.forEach(function (x) { 
 		           if (typeof(x) == "undefined" || typeof(x.nota) == "undefined") return;
 		           var renderedContents = ["", ""];
 			   x['luogo'] = addSlash(x['luogo']);
@@ -280,7 +276,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 //			       renderedContents[1] += "<div style='float: right'><img src='img/check.svg' alt='check' height='16' width='16'></div>"
 //			   }
 			   bicitable.fnAddData(renderedContents);
-		   //});
+		   });
                }
            });
 	
