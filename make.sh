@@ -19,7 +19,7 @@ function makeBase {
     cat footer3.html.tmpl >> $1
 }
 
-for i in index hsk art riflessioni nsa psn cloudusb misc about bci gadgets energiaescienza cars ciclozingarate mappe ; do 
+for i in index hsk art art-africa riflessioni nsa psn cloudusb misc about bci gadgets energiaescienza cars ciclozingarate mappe ; do 
     makeBase $i.html  
 done
 
