@@ -24,6 +24,7 @@ for i in index hsk art art-africa riflessioni nsa psn cloudusb misc about bci ga
 done
 
 cp art.html arte.html
+cp art-africa.html arte-africa.html
 
 git commit -am "..." 
 git push
